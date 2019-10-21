@@ -11,14 +11,14 @@
 <h1>Login</h1>
 <div class="txtbx">
   <span data-placeholder="Username"></span>
-  <input type="text" name="user_name">
+  <input type="text" name="user_name" required>
 
   </div>
 
 
   <div class="txtbx">
   <span data-placeholder="Password"></span>
-    <input type="password" name="user_pass">
+    <input type="password" name="user_pass" required>
 
   </div>
 
