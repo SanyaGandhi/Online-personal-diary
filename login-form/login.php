@@ -1,35 +1,19 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <link rel="stylesheet" href="css/style.css">
-    <meta charset="utf-8">
-    <title>Login/SignUp</title>
-  </head>
-  <body>
+<?php
+    require('../auth/config.php');
+    require('../auth/db.php');
+    $uname = $_POST["user_name"];
+    $pass = $_POST["user_pass"];
 
-<form class="login-form" action="index.html" method="post">
-<h1>Login</h1>
-<div class="txtbx">
-  <span data-placeholder="Username"></span>
-  <input type="text">
+    $query = "SELECT * from users WHERE uname = '$uname' and pass = '$pass'";
 
-  </div>
+    $result = mysqli_query($conn, $query) or die(mysql_error($con));
 
-
-  <div class="txtbx">
-  <span data-placeholder="Password"></span>
-    <input type="password">
-
-  </div>
-
-<input type="submit" class="logbtn" value="Login">
-
-<div class="bottomtxt">
-<br>
-  Don't have an account?
-  <a href="#">SignUp</a>
-  </div>
-</form>
-
-  </body>
-</html>
+    $count = mysqli_num_rows($result);
+    if ($count<=0)
+    {
+    echo"Sorry, your credentials are not valid, Please try again.";
+    }
+    else {
+    echo"You are a validated user.";
+    }
+?>

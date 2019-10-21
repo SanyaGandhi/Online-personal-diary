@@ -199,7 +199,7 @@ body {
 
 <div class="navbar">
   <a href="signup-form\signup.php" class="right">Sign up</a>
-   <a href="login-form\login.php"class="right">Login</a>
+   <a href="login-form\index.php"class="right">Login</a>
 </div>
 <div class="header" >
   <h1>Welcome to your personalized web diary!!</h1>
