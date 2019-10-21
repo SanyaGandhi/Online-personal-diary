@@ -20,12 +20,12 @@ body {
 /* Header/logo Title */
 .header {
   background-image: url("diary3.jpg");
-  background-size: 100% 90%;
+  background-size: 100% 100%;
   background-repeat:  no-repeat;
   padding-top: 15%;
   padding-right:15% 
   padding-left:15%;
-  padding-bottom: 20%;
+  padding-bottom: 9%;
   text-align: center;
   
   color: black;
@@ -35,25 +35,26 @@ body {
   border: none;
   border-radius: 20px;
   color: white;
-  padding: 20px;
+  padding: 2% 3%;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 150%;
   margin: 20px 50px;
   cursor: pointer;
 }
 
 /* Increase the font size of the heading */
 .header h1 {
-  padding-top: 10%;
+  padding-top: 7%;
   font-size: 60px;
 }
 
 /* Style the top navigation bar */
 .navbar {
+  
   overflow: hidden;
-  background-color: #333;
+  background-color: #cc0099;
 }
 
 /* Style the navigation bar links */
@@ -62,7 +63,8 @@ body {
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 20px;
+  padding: 20px 40px 50px 40px;
+  /* padding bottom: 50px; */
   text-decoration: none;
 }
 
@@ -114,9 +116,10 @@ body {
 .whywrite{
   align-self: center;
   text-align: center;
- -ms-flex: 100%; /* IE10 */
-  flex: 100%;
-  background-color: #ddd;
+ /* -ms-flex: 100%; /* IE10 */
+  /* flex: 100%; */ 
+  height:500px ;
+  background-color: #cc0099;
   padding: 20px;
   padding-bottom: 30px;
 
@@ -124,7 +127,7 @@ body {
 .whywrite div.reason1 {
   border-spacing: 20px;
  background-color: #ffffff;
- border-radius: 20%;
+ /* border-radius: 20%; */
  padding: 20px;
  text-align: center; 
  -ms-flex: 30%; /* IE10 */
@@ -134,7 +137,7 @@ body {
 .whywrite div.reason2 {
 
  background-color: #ffffff;
- border-radius: 20px;
+ /* border-radius: 20px; */
  padding: 20px;
  text-align: center; 
  -ms-flex: 30%; /* IE10 */
@@ -143,7 +146,7 @@ body {
 }.whywrite div.reason3 {
   border-spacing: 20px;
  background-color: #ffffff;
- border-radius: 20%;
+ /* border-radius: 20%; */
  padding: 20px;
  text-align: center; 
  -ms-flex: 30%; /* IE10 */
@@ -187,12 +190,12 @@ body {
 }*/
 
 /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-/*@media screen and (max-width: 400px) {
+@media screen and (max-width: 400px) {
   .navbar a {
     float: none;
     width: 100%;
   }
-}*/
+}
 </style>
 </head>
 <body>
