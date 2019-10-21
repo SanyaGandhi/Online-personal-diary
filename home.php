@@ -6,6 +6,7 @@
 <title>My Diary</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <style>
 * {
   box-sizing: border-box;
@@ -35,11 +36,11 @@ body {
   border: none;
   border-radius: 20px;
   color: white;
-  padding: 2% 3%;
+  padding: 1%;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 150%;
+  font-size: 120%;
   margin: 20px 50px;
   cursor: pointer;
 }
@@ -47,7 +48,7 @@ body {
 /* Increase the font size of the heading */
 .header h1 {
   padding-top: 7%;
-  font-size: 60px;
+  font-size: 40px;
 }
 
 /* Style the top navigation bar */
@@ -63,7 +64,8 @@ body {
   display: block;
   color: white;
   text-align: center;
-  padding: 20px 40px 50px 40px;
+  font-size: 120%;
+  padding: 20px ;
   /* padding bottom: 50px; */
   text-decoration: none;
 }
@@ -118,17 +120,21 @@ body {
   text-align: center;
  /* -ms-flex: 100%; /* IE10 */
   /* flex: 100%; */ 
-  height:500px ;
+  height:100%;
   background-color: #cc0099;
   padding: 20px;
-  padding-bottom: 30px;
+  padding-bottom: 50px;
 
+}
+.whywrite h1 {
+  
+  font-size: 30px;
 }
 .whywrite div.reason1 {
   border-spacing: 20px;
  background-color: #ffffff;
  /* border-radius: 20%; */
- padding: 20px;
+ padding: 50px;
  text-align: center; 
  -ms-flex: 30%; /* IE10 */
   flex: 30%;
@@ -138,7 +144,7 @@ body {
 
  background-color: #ffffff;
  /* border-radius: 20px; */
- padding: 20px;
+ padding: 50px;
  text-align: center; 
  -ms-flex: 30%; /* IE10 */
   flex: 30%;
@@ -147,11 +153,22 @@ body {
   border-spacing: 20px;
  background-color: #ffffff;
  /* border-radius: 20%; */
- padding: 20px;
+ padding: 50px;
  text-align: center; 
  -ms-flex: 30%; /* IE10 */
   flex: 30%;
 
+}
+.whyhere h1 {
+  
+  font-size: 30px;
+}
+.whyhere div.here1{
+  margin-bottom: 2%;
+  background-color: #F5DAE3;
+}
+.whyhere div.here2{
+  background-color: brown;
 }
 .features{
      
@@ -179,7 +196,7 @@ body {
 .footer {
   padding: 20px;
   text-align: center;
-  background: #ddd;
+  background: #cc0099;
 }
 
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
@@ -201,12 +218,13 @@ body {
 <body>
 
 <div class="navbar">
+
   <a href="signup-form\signup.php" class="right">Sign up</a>
    <a href="login-form\login.php"class="right">Login</a>
 </div>
 <div class="header" >
   <h1>Welcome to your personalized web diary!!</h1>
-  <button>Create account</button>
+  <button onclick="window.location.href='signup-form/signup.php'">Create account</button>
 </div>
 <!-- <div style="background-color: black;" heigth="50">
   hello
@@ -219,7 +237,7 @@ body {
       <img src="reason1.png" width="100" height="100" style="border-radius: 50%";>
     </div>
     <div>
-      To record and recall events and issues
+      <h3>To record and recall events and issues</h3>
   </div>
     </div>
     
@@ -227,13 +245,12 @@ body {
      <div >
       <img src="reason2.jpg" width="100" height="100" style="border-radius: 50%";>
     </div>
-    To honestly express your own thoughts and feelings
-  </div>
+    <h3> honestly express your own thoughts and feelings</h3>  </div>
    <div class="reason3">
      <div >
       <img src="reason3.png" width="100" height="100" style="border-radius: 50%";>
     </div>
-    To get therapeutic mental release
+    <h3>To get therapeutic mental release</h3>
   </div>
   </div>
 
@@ -243,7 +260,7 @@ body {
       <img src="reason4.png" width="100" height="100" style="border-radius: 50%";>
     </div>
     <div>
-      To have better self-reflection
+      <h3>To have better self-reflection</h3>
   </div>
     </div>
     
@@ -251,13 +268,13 @@ body {
      <div >
       <img src="reason5.png" width="100" height="100" style="border-radius: 50%;">
     </div>
-    To gain a new perspective
+    <h3>To gain a new perspective</h3>
   </div>
    <div class="reason3">
      <div >
       <img src="reason6.png" width="100" height="100" style="border-radius: 50%;">
     </div>
-    To increase vocabulary and enhance writing skills
+    <h3>To increase vocabulary and enhance writing skills</h3>
   </div>
   </div>
  
@@ -265,69 +282,52 @@ body {
 
 <section class="whyhere">
    <h1 style="text-align: center;">Why write here?</h1>
-  <div class="row">
-     <div class="here1" style="padding: 5%">
-      <img src="reason3.png" style="float: left; border-radius: 50%;"  width="100" height="100">
+  <div class="row here1">
+     <div style="padding: 3%;padding-left: 7%;">
+      <img src="reason3.png" style=" border-radius: 25%;">
     </div> 
-    <div style="float: right; padding-left: 40%; padding-top:5%">
-      <p style="font-size: 20px;">Hello</p>
+    <div style="padding-left:50%;padding-top: 7%;" >
+      <p style="font-size: 1em;">Meow Meow</p>
     </div>
   </div>
+  <div class="row here1">
+  
+   <div style="padding-left:3%;padding-left: 7%; padding-top: 7%;" >
+     <p style="font-size: 1em;">Meow Meow</p>
+   </div>
+   <div style="padding: 3%; padding-left:55%;">
+    <img src="reason3.png" style=" border-radius: 25%;">
+  </div> 
+ </div>
+ <div class="row here1">
+  <div style="padding: 3%;padding-left: 7%;">
+   <img src="reason3.png" style=" border-radius: 25%;">
+ </div> 
+ <div style="padding-left:50%;padding-top: 7%;" >
+   <p style="font-size: 1em;">Meow Meow</p>
+ </div>
+</div>
+<div class="row here1">
+  
+  <div style="padding-left:3%;padding-left: 7%; padding-top: 7%;" >
+    <p style="font-size: 1em;">Meow Meow</p>
+  </div>
+  <div style="padding: 3%; padding-left:55%;">
+   <img src="reason3.png" style=" border-radius: 25%;">
+ </div> 
+</div>
+ 
   
 </section>
-<section class="features">
-  <h1 style="text-align: center; font-size: 45px">Features</h1>
-  <div class="row">
-    <div class="left">
-      <div>
-        <img src="diary2.jpg" width="400" height="333">
-      </div>
-      <div>
-        write description
-      </div>
-    </div>
-    <div class="center">
-      <img src="diary2.jpg" width="400" height="333">
-    </div>
-    <div class="right">
-      <img src="diary2.jpg" width="400" height="333">
-    </div>
-   
-  </div>
- 
-</section>
 
 
 
-<div class="row1">
- <!--  <div class="side">
-    <h1 style="text-align: center;">Why write?</h1>
-    <h5>Photo of me:</h5>
-    <div class="fakeimg" style="height:200px;">Image</div>
-    <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
-    <h3>More Text</h3>
-    <p>Lorem ipsum dolor sit ame.</p>
-    <div class="fakeimg" style="height:60px;">Image</div><br>
-    <div class="fakeimg" style="height:60px;">Image</div><br>
-    <div class="fakeimg" style="height:60px;">Image</div>
-  </div> -->
-  <!-- <div class="main">
-    <h2>TITLE HEADING</h2>
-    <h5>Title description, Dec 7, 2017</h5>
-    <div class="fakeimg" style="height:200px;">Image</div>
-    <p>Some text..</p>
-    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-    <br>
-    <h2>TITLE HEADING</h2>
-    <h5>Title description, Sep 2, 2017</h5>
-    <div class="fakeimg" style="height:200px;">Image</div>
-    <p>Some text..</p>
-    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-  </div> -->
-</div>
+
+
 
 <div class="footer">
-  <h2>Footer</h2>
+  <h2>We are a hardworking team of Three</h2>
+  <h3> Divyam <i class="fa fa-book"></i> Sanya <i class="fa fa-book"></i>  Abhishek  </h3>
 </div>
 
 </body>
