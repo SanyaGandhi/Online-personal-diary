@@ -204,6 +204,7 @@ body {
 <div class="header" >
   <h1>Welcome to your personalized web diary!!</h1>
   <button>Create account</button>
+  <!-- <a href="signup-form\signup.php" class="button">Create Account</a> -->
 </div>
 <!-- <div style="background-color: black;" heigth="50">
   hello

@@ -27,7 +27,7 @@
 <div class="bottomtxt">
 <br>
   Don't have an account?
-  <a href="#">SignUp</a>
+  <a href="..\signup-form\signup.php">SignUp</a>
   </div>
 </form>
 

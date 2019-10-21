@@ -1,39 +1,70 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" href="css/style.css">
+    
     <meta charset="utf-8">
     <title>SignUp</title>
   </head>
   <body>
 
-<form action="/action_page.php">
+<form class="signup-form" action="/action_page.php">
 
 <div class="container">
 
 <h1>Sign Up</h1>
 
-<label for="Username"><b>Username</b></label>
-<input type="text"placeholder="Username"name="Username" required><br><br>
 
-<label for="Email"><b>Email</b></label>
-<input type="text"placeholder="Email"name="Email" required><br>
+<div class="txtbx">
+  <span data-placeholder="Name"></span>
+  <input type="text" name="name" required>
+  
+  </div>
 
-<label for="PhoneNumber"><b>Phone Number</b></label>
-<input type="text"placeholder="PhoneNumber"name="PhoneNumber"><br>
+<div class="txtbx">
+  <span data-placeholder="Username"></span>
+  <input type="text" name="user_name" required>
+  
+  </div>
 
-<label for="Description"><b>Description</b></label>
-<input type="textarea"placeholder="Something about yourself...."name="Description"><br>
+  <div class="txtbx">
+  <span data-placeholder="Email"></span>
+  <input type="text" name="email" required>
+  </div>
+ 
+  
+  <div class="txtbx">
+  <span data-placeholder="Mobile"></span>
+  <input type="text" name="mobile_number" required>
+  </div>
+ 
+  <div class="txtbx">
+  <span data-placeholder="Password"></span>
+  <input type="password" name="pwd" required>
+  </div>
+ 
+  <div class="txtbx">
+  <span data-placeholder="Repeat Password"></span>
+  <input type="password" name="rep_pwd" required>
+  </div>
+ 
+<!-- <label class="chkbx"><input type="checkbox"  name="public" style="margin-bottom:15px"> Public Account </label>
 
-<label for="Password"><b>Password</b></label>
-<input type="text"placeholder="Password"name="Password" required><br>
+<label class="chkbx"><input type="checkbox"  name="private" style="margin-bottom:15px"> Private Account </label> -->
+<!-- 
+<div class="row">
+    <div class="col-sm-6" style="background-color:lavender;">Public Account</div>
+    <div class="col-sm-6" style="background-color:lavenderblush;">Private Account</div>
+  </div> -->
 
-<label for="Password"><b>Repeat Password</b></label>
-<input type="text"placeholder="Password"name="Repeat-Password" required><br>
-
-<label><input type="checkbox"  name="public" style="margin-bottom:15px"> Public Account </label>
-
-<label><input type="checkbox"  name="private" style="margin-bottom:15px"> Private Account </label>
+  <div class="row">
+  <div class="column">
+    <h3>Public Account</h3>
+  </div>
+  <div class="column">
+    <h3>Private  Account</h3>
+  </div>
+</div>
 
 <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
