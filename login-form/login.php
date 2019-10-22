@@ -4,7 +4,8 @@
     $uname = $_POST["user_name"];
     $pass = $_POST["user_pass"];
 
-    $query = "SELECT * from users WHERE uname = '$uname' and pass = '$pass'";
+    $password = md5($pass);
+    $query = "SELECT * from users WHERE uname = '$uname' and pass = '$password'";
 
     $result = mysqli_query($conn, $query) or die(mysql_error($conn));
 

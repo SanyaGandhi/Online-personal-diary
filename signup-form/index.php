@@ -31,9 +31,9 @@
 <label for="Password"><b>Repeat Password</b></label>
 <input type="text"placeholder="Password"name="password_2" required><br>
 
-<label><input type="checkbox"  name="public" style="margin-bottom:15px"> Public Account </label>
+<!-- <label><input type="checkbox"  name="public" style="margin-bottom:15px"> Public Account </label>
 
-<label><input type="checkbox"  name="private" style="margin-bottom:15px"> Private Account </label>
+<label><input type="checkbox"  name="private" style="margin-bottom:15px"> Private Account </label> -->
 
 <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
