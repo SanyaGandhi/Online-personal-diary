@@ -218,13 +218,13 @@ body {
 <body>
 
 <div class="navbar">
-
-  <a href="signup-form\signup.php" class="right">Sign up</a>
-   <a href="login-form\login.php"class="right">Login</a>
+  <a href="signup-form\index.php" class="right">Sign up</a>
+   <a href="login-form\index.php"class="right">Login</a>
 </div>
 <div class="header" >
   <h1>Welcome to your personalized web diary!!</h1>
-  <button onclick="window.location.href='signup-form/signup.php'">Create account</button>
+  <button>Create account</button>
+  <!-- <a href="signup-form\signup.php" class="button">Create Account</a> -->
 </div>
 <!-- <div style="background-color: black;" heigth="50">
   hello

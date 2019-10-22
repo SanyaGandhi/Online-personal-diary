@@ -12,14 +12,12 @@ body
   background: #DCE35B;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #45B649, #DCE35B);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to right, #45B649, #DCE35B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
 }
 
-.login-form
+.signup-form
 {
-width: 360px;
-height: 500px;
+width: 400px;
+height: 700px;
 background: #f1f1f1;
 padding: 80px 40px;
 border-radius: 10px;
@@ -28,25 +26,21 @@ left:50%;
 top:50%;
 transform: translate(-50%,-50%);
 
-
-
 }
 
-.login-form h1{
+.signup-form h1{
 
   text-align: center;
   margin-bottom: 60px;
-
 }
+
 
 .txtbx{
 border-bottom: 2px solid #adadad;
 position: relative;
 margin: 30px;
-
-
-
 }
+
 .txtbx input{
  font-size: 15px;
  color: #333;
@@ -73,10 +67,33 @@ transition: .5s;
 content: '';
 position: absolute;
 width: 0%;
-height: 2px;
-background: #DCE35B;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #45B649, #DCE35B);  /* Chrome 10-25, Safari 5.1-6 */
+ height: 2px; 
+ background: #DCE35B; 
+background: -webkit-linear-gradient(to right, #45B649, #DCE35B);
 background: linear-gradient(to right, #45B649, #DCE35B);
 transition: .5s;
 
+} 
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+  cursor: pointer;
+  position: relative;
+  background: #eee;
+  font-size: 13px;
+  transition: 0.2s;
+
+  /* make the list items unselectable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
+
+.column:hover{
+
+  background: #ddd;
+}
+

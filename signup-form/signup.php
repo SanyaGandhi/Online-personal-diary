@@ -1,52 +1,67 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
-    <meta charset="utf-8">
-    <title>SignUp</title>
-  </head>
-  <body>
+<?php
+  session_start();
 
-<form action="/action_page.php">
+  // initializing variables
+  $username = "";
+  $email    = "";
+  $desc     = "";
+  $errors = array(); 
+  
+  //connect to database
+  require('../auth/config.php');
+  require('../auth/db.php');
 
-<div class="container">
+  // REGISTER USER
+  if (isset($_POST['signupbtn'])) {
+  // receive all input values from the form
+  $username = mysqli_real_escape_string($conn, $_POST['username']);
+  $email = mysqli_real_escape_string($conn, $_POST['email']);
+  $password_1 = mysqli_real_escape_string($conn, $_POST['password_1']);
+  $password_2 = mysqli_real_escape_string($conn, $_POST['password_2']);
+  $phone = mysqli_real_escape_string($conn, $_POST["PhoneNumber"]);
+  $desc = mysqli_real_escape_string($conn, $_POST["Description"]);
 
-<h1>Sign Up</h1>
+  // form validation: ensure that the form is correctly filled ...
+  // by adding (array_push()) corresponding error unto $errors array
+  if ($password_1 != $password_2) {
+	array_push($errors, "The two passwords do not match");
+  }
 
-<label for="Username"><b>Username</b></label>
-<input type="text"placeholder="Username"name="Username" required><br><br>
+  // first check the database to make sure 
+  // a user does not already exist with the same username and/or email
+  $user_check_query = "SELECT * FROM users WHERE uname=$username OR email=$email LIMIT 1";
+  $result = mysqli_query($conn, $user_check_query);
+  $user = mysqli_fetch_assoc($result);
+  
+  if ($user) { // if user exists
+    if ($user['uname'] === $username) {
+      array_push($errors, "Username already exists");
+    }
 
-<label for="Email"><b>Email</b></label>
-<input type="text"placeholder="Email"name="Email" required><br>
+    if ($user['email'] === $email) {
+      array_push($errors, "email already exists");
+    }
+  }
 
-<label for="PhoneNumber"><b>Phone Number</b></label>
-<input type="text"placeholder="PhoneNumber"name="PhoneNumber"><br>
+  // Finally, register user if there are no errors in the form
+  if (count($errors) == 0) 
+  {
+  	$password = md5($password_1);//encrypt the password before saving in the database
 
-<label for="Description"><b>Description</b></label>
-<input type="textarea"placeholder="Something about yourself...."name="Description"><br>
+  	$query = "INSERT INTO users (uname, email, pass, phone, description) VALUES('$username', '$email', '$password', '$phone', '$desc')";
+  	mysqli_query($conn, $query);
+  	$_SESSION['username'] = $username;
+  	$_SESSION['success'] = "You are now logged in";
+    // header('location: index.php');
+  }
+}
 
-<label for="Password"><b>Password</b></label>
-<input type="text"placeholder="Password"name="Password" required><br>
+?>
 
-<label for="Password"><b>Repeat Password</b></label>
-<input type="text"placeholder="Password"name="Repeat-Password" required><br>
-
-<label><input type="checkbox"  name="public" style="margin-bottom:15px"> Public Account </label>
-
-<label><input type="checkbox"  name="private" style="margin-bottom:15px"> Private Account </label>
-
-<p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-
-
-<div class="clearfix">
-      <button type="button" class="cancelbtn">Cancel</button>
-      <button type="submit" class="signupbtn">Sign Up</button>
-    </div>
+<?php  if (count($errors) > 0) : ?>
+  <div class="error">
+  	<?php foreach ($errors as $error) : ?>
+  	  <p><?php echo $error ?></p>
+  	<?php endforeach ?>
   </div>
-
-
-</form>
-
-</body>
-</html>
-
+<?php  endif ?>
