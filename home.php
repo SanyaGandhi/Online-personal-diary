@@ -198,7 +198,7 @@ body {
 <body>
 
 <div class="navbar">
-  <a href="signup-form\signup.php" class="right">Sign up</a>
+  <a href="signup-form\index.php" class="right">Sign up</a>
    <a href="login-form\index.php"class="right">Login</a>
 </div>
 <div class="header" >

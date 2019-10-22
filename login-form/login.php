@@ -6,7 +6,7 @@
 
     $query = "SELECT * from users WHERE uname = '$uname' and pass = '$pass'";
 
-    $result = mysqli_query($conn, $query) or die(mysql_error($con));
+    $result = mysqli_query($conn, $query) or die(mysql_error($conn));
 
     $count = mysqli_num_rows($result);
     if ($count<=0)
