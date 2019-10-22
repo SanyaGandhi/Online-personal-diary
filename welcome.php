@@ -420,13 +420,13 @@ body {
 
 
 <section>
-  <input type="button" value="B" onclick="mod_selection('[b]','[/b]')" />
+  <!-- <input type="button" value="B" onclick="mod_selection('[b]','[/b]')" />
 
     <input type="button" value="I" onclick="mod_selection('[i]','[/i]')" />
 
     <input type="button" value="U"onclick="mod_selection('[u]','[/u]')"  />
 
-    <br />
+    <br /> -->
 
      
 
