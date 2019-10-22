@@ -7,6 +7,124 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script type="text/javascript">
+  
+          function view_text () {
+  
+              // Find html elements.
+  
+              var textArea = document.getElementById('my_text');
+  
+              var div = document.getElementById('view_text');
+
+               
+  
+              // Put the text in a variable so we can manipulate it.
+  
+              var text = textArea.value;
+  
+               
+  
+              // Make sure html and php tags are unusable by disabling < and >.
+  
+              text = text.replace(/\</gi, "<");
+  
+              text = text.replace(/\>/gi, ">");
+  
+               
+  
+              // Exchange newlines for <br />
+  
+              text = text.replace(/\n/gi, "<br />");
+  
+               
+  
+              // Basic BBCodes.
+  
+              text = text.replace(/\[b\]/gi, "<b>");
+  
+              text = text.replace(/\[\/b\]/gi, "</b>");
+  
+               
+  
+              text = text.replace(/\[i\]/gi, "<i>");
+  
+              text = text.replace(/\[\/i\]/gi, "</i>");
+  
+               
+  
+              text = text.replace(/\[u\]/gi, "<u>");
+  
+              text = text.replace(/\[\/u\]/gi, "</u>");
+  
+               
+  
+              // Print the text in the div made for it.
+  
+              div.innerHTML = text;
+  
+          }
+  
+           
+  
+          function mod_selection (val1,val2) {
+  
+              // Get the text area
+  
+              var textArea = document.getElementById('my_text');
+  
+               
+  
+              // IE specific code.
+  
+              if( -1 != navigator.userAgent.indexOf ("MSIE") ) {
+  
+                   
+  
+                  var range = document.selection.createRange();
+  
+                  var stored_range = range.duplicate();
+  
+                   
+  
+                  if(stored_range.length > 0) {
+  
+                      stored_range.moveToElementText(textArea);
+  
+                      stored_range.setEndPoint('EndToEnd', range);
+  
+                      textArea.selectionstart = stored_range.text.length - range.text.length;
+  
+                      textArea.selectionend = textArea.selectionstart + range.text.length;
+  
+                  }
+  
+              }
+  
+              // Do we even have a selection?
+  
+              if (typeof(textArea.selectionstart) != "undefined") {
+  
+                  // Split the text in three pieces - the selection, and what comes before and after.
+  
+                  var begin = textArea.value.substr(0, textArea.selectionstart);
+  
+                  var selection = textArea.value.substr(textArea.selectionstart, textArea.selectionend - textArea.selectionstart);
+  
+                  var end = textArea.value.substr(textArea.selectionend);
+  
+                   
+  
+                  // Insert the tags between the three pieces of text.
+  
+                  textArea.value = begin + val1 + selection + val2 + end;
+
+              }
+  
+          }
+  
+      </script>
+  
 <style>
 * {
   box-sizing: border-box;
@@ -20,13 +138,13 @@ body {
 
 /* Header/logo Title */
 .header {
-  background-image: url("diary3.jpg");
+  background-image: url("diaryw.jpg");
   background-size: 100% 100%;
   background-repeat:  no-repeat;
   padding-top: 15%;
-  padding-right:15% 
+  padding-right:15%;
   padding-left:15%;
-  padding-bottom: 9%;
+  padding-bottom: 15%;
   text-align: center;
   
   color: black;
@@ -43,12 +161,14 @@ body {
   font-size: 120%;
   margin: 20px 50px;
   cursor: pointer;
+ 
 }
 
 /* Increase the font size of the heading */
 .header h1 {
   padding-top: 7%;
   font-size: 40px;
+  columns: #000000; 
 }
 
 /* Style the top navigation bar */
@@ -191,6 +311,24 @@ body {
   width: 100%;
   padding: 20px;
 }
+.text_edit {
+
+    width: 500px;
+
+    height: 300px;
+
+    resize: none;
+
+}
+
+ 
+
+#view_text {
+
+    width: 500px;
+
+}
+
 
 /* Footer */
 .footer {
@@ -218,13 +356,13 @@ body {
 <body>
 
 <div class="navbar">
-  <a href="signup-form\index.php" class="right">Sign up</a>
-   <a href="login-form\index.php"class="right">Login</a>
+
+  <a href="signup-form\signup.php" class="right"></a>
+   <a href="login-form\login.php"class="right"></a> 
 </div>
 <div class="header" >
-  <h1>Welcome to your personalized web diary!!</h1>
-  <button>Create account</button>
-  <!-- <a href="signup-form\signup.php" class="button">Create Account</a> -->
+  <h1>We welcome the hidden writer in you!</h1>
+  <button onclick="window.location.href='signup-form/signup.php'">Write your first diary!</button>
 </div>
 <!-- <div style="background-color: black;" heigth="50">
   hello
@@ -280,44 +418,40 @@ body {
  
 </section>
 
-<section class="whyhere">
-   <h1 style="text-align: center;">Why write here?</h1>
-  <div class="row here1">
-     <div style="padding: 3%;padding-left: 7%;">
-      <img src="reason3.png" style=" border-radius: 25%;">
-    </div> 
-    <div style="padding-left:50%;padding-top: 7%;" >
-      <p style="font-size: 1em;">Meow Meow</p>
+
+<section>
+  <!-- <input type="button" value="B" onclick="mod_selection('[b]','[/b]')" />
+
+    <input type="button" value="I" onclick="mod_selection('[i]','[/i]')" />
+
+    <input type="button" value="U"onclick="mod_selection('[u]','[/u]')"  />
+
+    <br /> -->
+
+     
+
+    <!-- Text area -->
+
+    <textarea class="text_edit" id="my_text"></textarea>
+
+    <br />
+
+     
+
+    <!-- Submit button -->
+
+    <input type="button" value="Show text"  onclick="view_text()"/>
+
+     
+
+    <!-- Empty div to put the text in -->
+
+    <div id="view_text">
+      hello
     </div>
-  </div>
-  <div class="row here1">
-  
-   <div style="padding-left:3%;padding-left: 7%; padding-top: 7%;" >
-     <p style="font-size: 1em;">Meow Meow</p>
-   </div>
-   <div style="padding: 3%; padding-left:55%;">
-    <img src="reason3.png" style=" border-radius: 25%;">
-  </div> 
- </div>
- <div class="row here1">
-  <div style="padding: 3%;padding-left: 7%;">
-   <img src="reason3.png" style=" border-radius: 25%;">
- </div> 
- <div style="padding-left:50%;padding-top: 7%;" >
-   <p style="font-size: 1em;">Meow Meow</p>
- </div>
-</div>
-<div class="row here1">
-  
-  <div style="padding-left:3%;padding-left: 7%; padding-top: 7%;" >
-    <p style="font-size: 1em;">Meow Meow</p>
-  </div>
-  <div style="padding: 3%; padding-left:55%;">
-   <img src="reason3.png" style=" border-radius: 25%;">
- </div> 
-</div>
+
  
-  
+
 </section>
 
 
