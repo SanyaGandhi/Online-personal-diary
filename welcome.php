@@ -355,6 +355,7 @@ body {
 <body>
 
 <div class="navbar">
+<!-- Edited by divyam - till line 370-->
   <?php 
   if(isset($_SESSION['username']) && !empty($_SESSION['username'])) 
   {
@@ -365,7 +366,8 @@ body {
     echo "<a href='signup-form\index.php' class='right'>Signup</a>";
     echo "<a href='login-form\index.php' class='right'>Login</a>";
   }
-  ?>
+?>
+<!-- Edit complete-->
 </div>
 <div class="header" >
   <h1>We welcome the hidden writer in you!</h1>
