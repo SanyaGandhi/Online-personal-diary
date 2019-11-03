@@ -359,7 +359,8 @@ body {
   <?php 
   if(isset($_SESSION['username']) && !empty($_SESSION['username'])) 
   {
-      echo "<a href='#' class='right'>" . $_SESSION['username'] . "</a>";
+    echo "<a href='logout/logout.php' class='right'>Logout</a>";  
+    echo "<a href='#' class='right'>" . $_SESSION['username'] . "</a>";
   } 
   else
   {
