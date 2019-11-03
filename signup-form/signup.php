@@ -29,10 +29,10 @@
 
   // first check the database to make sure 
   // a user does not already exist with the same username and/or email
-  $user_check_query = "SELECT * FROM users WHERE uname=$username OR email=$email LIMIT 1";
+  $user_check_query = "SELECT * FROM users WHERE uname='$username' OR email='$email' LIMIT 1";
   $result = mysqli_query($conn, $user_check_query);
-  $user = mysqli_fetch_assoc($result);
-  
+  $user = mysqli_fetch_assoc($result); 
+
   if ($user) { // if user exists
     if ($user['uname'] === $username) {
       array_push($errors, "Username already exists");
@@ -52,10 +52,9 @@
   	mysqli_query($conn, $query);
   	$_SESSION['username'] = $username;
   	$_SESSION['success'] = "You are now logged in";
-    // header('location: index.php');
+    header('location: ../welcome.php');
   }
 }
-
 ?>
 
 <?php  if (count($errors) > 0) : ?>

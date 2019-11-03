@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     require('../auth/config.php');
     require('../auth/db.php');
     $uname = $_POST["user_name"];
@@ -16,5 +18,8 @@
     }
     else {
     echo"You are a validated user.";
+    $_SESSION['username'] = $uname;
+    $_SESSION['success'] = "You are now logged in";
+    header('location: ../welcome.php');
     }
 ?>

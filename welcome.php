@@ -1,5 +1,4 @@
-
-
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -356,9 +355,17 @@ body {
 <body>
 
 <div class="navbar">
-
-  <a href="signup-form\signup.php" class="right"></a>
-   <a href="login-form\login.php"class="right"></a> 
+  <?php 
+  if(isset($_SESSION['username']) && !empty($_SESSION['username'])) 
+  {
+      echo "<a href='#' class='right'>" . $_SESSION['username'] . "</a>";
+  } 
+  else
+  {
+    echo "<a href='signup-form\index.php' class='right'>Signup</a>";
+    echo "<a href='login-form\index.php' class='right'>Login</a>";
+  }
+  ?>
 </div>
 <div class="header" >
   <h1>We welcome the hidden writer in you!</h1>
