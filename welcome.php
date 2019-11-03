@@ -372,7 +372,21 @@ body {
 </div>
 <div class="header" >
   <h1>We welcome the hidden writer in you!</h1>
-  <button onclick="window.location.href='signup-form/signup.php'">Write your first diary!</button>
+  <!-- <button onclick="window.location.href='signup-form/index.php'">Write your first diary!</button> -->
+  
+  <!-- Edited by divyam till line 388, this is my attempt to make code a bit dynamic -->
+  <button><?php
+  if(isset($_SESSION['username']) && !empty($_SESSION['username'])) 
+  {
+    echo "<a href='posts/create.php' style='text-decoration:none; color:white;'>Write your first diary!</a>";
+  } 
+  else
+  {
+    echo "<a href='signup-form/index.php' style='text-decoration:none; color:white;'>Write your first diary!</a>";
+  }
+  ?></button>
+  <!-- Edit complete -->
+
 </div>
 <!-- <div style="background-color: black;" heigth="50">
   hello
