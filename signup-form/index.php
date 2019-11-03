@@ -1,51 +1,35 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
-    <meta charset="utf-8">
-    <title>SignUp</title>
-  </head>
-  <body>
 
-<form action="signup.php" method = "post">
+<html>
+<head>
+<title> Signup Form Design Tutorial </title>   
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
 
-<div class="container">
-
-<h1>Sign Up</h1>
-
-<label for="Username"><b>Username</b></label>
-<input type="text"placeholder="Username" name="username" required><br>
-
-<label for="Email"><b>Email</b></label>
-<input type="text"placeholder="Email"name="email" required><br>
-
-<label for="PhoneNumber"><b>Phone Number</b></label>
-<input type="text"placeholder="PhoneNumber"name="PhoneNumber" required><br>
-
-<label for="Description"><b>Description</b></label>
-<input type="textarea"placeholder="Something about yourself...."name="Description"><br>
-
-<label for="Password"><b>Password</b></label>
-<input type="text"placeholder="Password"name="password_1" required><br>
-
-<label for="Password"><b>Repeat Password</b></label>
-<input type="text"placeholder="Password"name="password_2" required><br>
-
-<!-- <label><input type="checkbox"  name="public" style="margin-bottom:15px"> Public Account </label>
-
-<label><input type="checkbox"  name="private" style="margin-bottom:15px"> Private Account </label> -->
-
-<p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-
-
-<div>
-      <button type="button" class="cancelbtn">Cancel</button>
-      <button type="submit" class="signupbtn" name="signupbtn">Sign Up</button>
+    <div id="login-box">
+      <div class="left-box">
+        <h1> Sign Up</h1>
+          
+          <input type="text" name="username" placeholder="Username" required/>
+          <input type="text" name="email" placeholder="Email"/>
+          <input type="password" name="password" placeholder="Password" required/>
+        
+          <input type="password" name="password2" placeholder="Retype password"required/>
+        
+          <input type="submit" name="signup-button" value="Sign Up"/>
+        
+        </div>
+        <div class="right-box">
+          <span class="signinwith">Sign in with<br/>Social Network     </span>
+        
+        <button class="social facebook">Log in with Facebook</button>    
+        <button class="social twitter">Log in with Twitter</button> 
+        <button class="social google">Log in with Google+</button> 
+            
+        
+        </div>
+        <div class="or">OR</div>
     </div>
-  </div>
-
-
-</form>
-
-</body>
+    
+</body>    
 </html>
