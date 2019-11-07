@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" href="css/style.css">
     <meta charset="utf-8">
     <title>SignUp</title>
   </head>
@@ -9,40 +9,53 @@
 
 <form action="signup.php" method = "post">
 
-<div class="container">
+<div class="container sign">
 
 <h1>Sign Up</h1>
 
-<label for="Username"><b>Username</b></label>
-<input type="text"placeholder="Username" name="username" required><br>
+<div class="txtbx">
+  <span data-placeholder="Username"></span>
+  <input type="text" name="username" required>
+</div>
 
-<label for="Email"><b>Email</b></label>
-<input type="text"placeholder="Email"name="email" required><br>
-
-<label for="PhoneNumber"><b>Phone Number</b></label>
-<input type="text"placeholder="PhoneNumber"name="PhoneNumber" required><br>
-
-<label for="Description"><b>Description</b></label>
-<input type="textarea"placeholder="Something about yourself...."name="Description"><br>
-
-<label for="Password"><b>Password</b></label>
-<input type="text"placeholder="Password"name="password_1" required><br>
-
-<label for="Password"><b>Repeat Password</b></label>
-<input type="text"placeholder="Password"name="password_2" required><br>
-
-<!-- <label><input type="checkbox"  name="public" style="margin-bottom:15px"> Public Account </label>
-
-<label><input type="checkbox"  name="private" style="margin-bottom:15px"> Private Account </label> -->
-
-<p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+<div class="txtbx">
+  <span data-placeholder="Email"></span>
+  <input type="text" name="email" required>
+</div>
+<div class="txtbx">
+  <span data-placeholder="Phone Number"></span>
+  <input type="text" name="PhoneNumber" required>
+</div>
 
 
-<div>
+<div class="txtbx">
+  <span data-placeholder="Description"></span>
+  <input type="text" name="Description" required>
+</div>
+
+
+<div class="txtbx">
+  <span data-placeholder="Password"></span>
+  <input type="text" name="password_1" required>
+</div>
+
+
+<div class="txtbx">
+  <span data-placeholder="Repeat Password"></span>
+  <input type="text" name="password_2" required>
+</div>
+
+
+<div class="terms">
+<p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p><br>
+</div>
+
+<div class="btns">
       <button type="button" class="cancelbtn">Cancel</button>
-      <button type="submit" class="signupbtn" name="signupbtn">Sign Up</button>
-    </div>
-  </div>
+      <button type="submit" class="signupbtn" name="signupbtn">Submit</button>
+</div>
+
+</div>
 
 
 </form>

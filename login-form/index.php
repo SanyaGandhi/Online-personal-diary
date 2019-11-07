@@ -3,11 +3,11 @@
   <head>
     <link rel="stylesheet" href="css/style.css">
     <meta charset="utf-8">
-    <title>Login/SignUp</title>
+    <title>Login</title>
   </head>
   <body>
-
-<form class="login-form" action="login.php" method="post">
+<!-- from here -->
+<form class="login-form" action="login.php" method="post"> 
 <h1>Login</h1>
 <div class="txtbx">
   <span data-placeholder="Username"></span>
@@ -21,15 +21,16 @@
     <input type="password" name="user_pass" required>
 
   </div>
-
+<div class="button">
 <input type="submit" class="logbtn" value="Login">
-
+</div>
+<!-- <input type="button" class="logbtn" value="Login"> -->
 <div class="bottomtxt">
 <br>
   Don't have an account?
   <a href="..\signup-form\signup.php">SignUp</a>
   </div>
 </form>
-
+<!-- till here -->
   </body>
 </html>

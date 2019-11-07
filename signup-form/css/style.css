@@ -10,14 +10,14 @@ body
 {
   min-height: 100vh;
   background: #DCE35B;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #45B649, #DCE35B);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #45B649, #DCE35B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: -webkit-radial-gradient(#F4e9e2, #cc0099);  /* Chrome 10-25, Safari 5.1-6 */
+background: radial-gradient( #F4e9e2, #cc0099); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.signup-form
+.container
 {
-width: 400px;
-height: 700px;
+width: 35%;
+height: 95%;
 background: #f1f1f1;
 padding: 80px 40px;
 border-radius: 10px;
@@ -28,10 +28,10 @@ transform: translate(-50%,-50%);
 
 }
 
-.signup-form h1{
+.sign h1{
 
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
 }
 
 
@@ -97,3 +97,34 @@ transition: .5s;
   background: #ddd;
 }
 
+.terms p{
+  text-align: center;
+}
+.cancelbtn
+{
+  background-color: #cc0099; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width:40%;
+
+}
+.signupbtn{
+  background-color: #cc0099; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 40%;
+}
+
+.btns{
+ margin:5px 5px 5px; 
+}
