@@ -33,7 +33,7 @@ CREATE TABLE `entry` (
   `uid` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `entry` text NOT NULL,
-  `created_at` date NOT NULL DEFAULT current_timestamp()
+  `created_at` date NOT NULL 
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --

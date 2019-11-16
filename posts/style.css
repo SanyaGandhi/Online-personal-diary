@@ -1,0 +1,39 @@
+body{
+    background-image: url("backgrounds/wood.jpg");
+}
+
+.top{
+    margin: 0;
+    background-color: black;
+    
+}
+.row{
+    display:inline-block;
+    
+}
+ 
+input[type=text] {
+    padding: 0;
+    height: 30px;
+    position: relative;
+    left: 0;
+    outline: none;
+    border: 1px solid #cdcdcd;
+    border-color: rgba(0, 0, 0, .15);
+    background-color: white;
+    font-size: 16px;
+    width: 50%;
+  }
+
+  .btn{
+    background-color: green; 
+  border: none;
+  color: white;
+  padding: 1vw 2vw;
+  font-size: 2vw;  
+} 
+
+.sbmt-btn{
+    text-align:center ;
+    
+}
