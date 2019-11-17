@@ -27,13 +27,15 @@ input[type=text] {
 
   .btn{
     background-color: green; 
+    display: block;
   border: none;
+  outline: none;
+  cursor: pointer;
   color: white;
-  padding: 1vw 2vw;
-  font-size: 2vw;  
+  height: 50px;  
+  width: 150px;
+  font-size: 25px;
+  margin-left: 30%;
+  text-align:center;
 } 
 
-.sbmt-btn{
-    text-align:center ;
-    
-}

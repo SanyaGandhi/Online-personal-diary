@@ -64,9 +64,9 @@
     <script>
         CKEDITOR.replace( 'body' );
     </script><br><br>
-    <div class="sbmt-btn">
+    
     <input class="btn" type = "submit" name = "submit">
-    </div>
+    
     </form>
 
 </body>
