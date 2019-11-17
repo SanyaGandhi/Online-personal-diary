@@ -27,20 +27,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="read_style.css">
+    <title><?php echo $post['title']; ?></title>
 </head>
 <body>
 
 <div>
-	<a href="<?php echo ROOT_URL; ?>posts/show_user_posts.php">Back</a>
-    <h1><?php echo $post['title']; ?></h1>	
+	<button class = "btn-grey"><a href="<?php echo ROOT_URL; ?>posts/show_user_posts.php" >Back</a></button>
+    <div class="main">
+        <h1><?php echo $post['title']; ?></h1>	
+
     <small>Created on <?php echo $post['created_at']; ?></small>
-    <p><?php echo $post['entry']; ?></p>
+    <div class="entry">
+    <p><?php echo $post['entry'];?></p>
+    </div>
+    </div>
     <?php 
         if($_SESSION['uid'] == $post['uid']) 
         {
-            echo "<a href=update.php?id=". $post['pid']. ">Update</a>";
-        } 
+            echo "<button class = 'btn-green'><a href=update.php?id=". $post['pid']. ">Update</a></button>";
+        }
     ?>
 </div>
 
