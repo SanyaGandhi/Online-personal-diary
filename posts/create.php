@@ -6,24 +6,27 @@
         require('../auth/db.php');
 
         // print_r($_SESSION);
-        $uname = $_SESSION['username'];
-        $query = "SELECT uid FROM users WHERE uname = '$uname'";
+        // $uname = $_SESSION['username'];
+        // $query = "SELECT uid FROM users WHERE uname = '$uname'";
 
-        $result = mysqli_query($conn, $query);
+        // $result = mysqli_query($conn, $query);
 
-        $uid_assoc_array = mysqli_fetch_assoc($result);
-        // var_dump($uid);
+        // $uid_assoc_array = mysqli_fetch_assoc($result);
+        // // var_dump($uid);
 
-        $uid = $uid_assoc_array['uid'];
+        // $uid = $uid_assoc_array['uid'];
 
+        $uid = $_SESSION['uid'];
         $title = mysqli_real_escape_string($conn, $_POST['title']);
         $body = mysqli_real_escape_string($conn, $_POST['body']);
         $date = mysqli_real_escape_string($conn, $_SESSION['date']);
-        $query_submit = "INSERT INTO entry (uid, title, entry) VALUES($uid, '$title', '$body')";
+        $desccc = mysqli_real_escape_string($conn, $_POST['description']);
+        $hash = mysqli_real_escape_string($conn, $_POST['hash']);
+        $query_submit = "INSERT INTO entry (uid, title, entry, description, hash) VALUES($uid, '$title', '$body','$desccc', '$hash')";
 
         if(mysqli_query($conn, $query_submit))
         {
-            echo "Submitted <br>";
+            header("location: show_user_posts.php");
         }
         else
         {
@@ -46,20 +49,22 @@
 <body>
 
 <div class="top">
-   <div class="row"><a href="../welcome.php"><img src="icons/back-icon1.png" alt="Back"width="45%" height="45%"></a></div>    
+   <div class="row"><a href="../welcome.php"><img src="icons/back-icon1.png" alt="Back"width="30%" height="30%"></a></div>    
 </div>
 
 <form  action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
-<p><b> DATE :</b>
-<?php 
-        $_SESSION['date'] = date('M,d,Y');
-        echo date('M,d,Y '); 
-    ?><br></p>
+<p><b> DATE :</b><?php $_SESSION['date'] = date('M,d,Y'); echo date('M,d,Y '); ?></p>
 
 <!-- <p style="text-align: center;font-size: 30px;"><b>Dairy Entry</b></p> -->
 <div class="row"> <p style="font-size:40px;"><b>Title</b></p></div>
-<input  type = "text" name = "title" required>
-   
+<input  type = "text" name = "title" required><br>
+
+<div class="row"> <p style="font-size:20px;"><b>Description</b></p></div>
+<input  type = "text" name = "description" ><br>
+
+<div class="row"> <p style="font-size:20px;"><b>Hash</b></p></div>
+<input  type = "text" name = "hash" placeholder = "#myfirstdiary #newlife"required><br>
+
     <textarea name = "body"></textarea>
     <script>
         CKEDITOR.replace( 'body' );
@@ -71,3 +76,4 @@
 
 </body>
 </html>
+

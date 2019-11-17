@@ -20,6 +20,12 @@
     echo"You are a validated user.";
     $_SESSION['username'] = $uname;
     $_SESSION['success'] = "You are now logged in";
+
+    $query = "SELECT uid FROM users WHERE uname = '$uname'";
+    $result = mysqli_query($conn, $query);
+    $uid_assoc_array = mysqli_fetch_assoc($result);
+    $_SESSION['uid'] = $uid_assoc_array['uid'];
+    
     header('location: ../welcome.php');
     }
 ?>
